@@ -14,9 +14,13 @@ class MemeAppDelegate: UIResponder, UIApplicationDelegate
 
     var window: UIWindow?
     var memes = [MemeModel]()
+    
+    let themeColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        window?.tintColor = themeColor
+        
         // Override point for customization after application launch.
         return true
     }

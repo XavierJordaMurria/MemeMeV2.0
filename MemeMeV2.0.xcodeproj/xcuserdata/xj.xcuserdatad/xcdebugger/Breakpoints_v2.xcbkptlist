@@ -6,15 +6,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMeV2.0/MainMemeViewController.swift"
+            timestampString = "469278762.261557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "unWindMain(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMeV2.0/MainMemeViewController.swift"
-            timestampString = "468593431.598718"
+            timestampString = "469278959.278754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "shareButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -22,128 +38,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemeMeV2.0/DataTabViewController.swift"
-            timestampString = "468672425.856903"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemeMeV2.0/DataTabViewController.swift"
-            timestampString = "468672425.856903"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMeV2.0/MainMemeViewController.swift"
-            timestampString = "468594349.994073"
+            timestampString = "469278876.77657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "save()"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "shareButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemeMeV2.0/MemeAppDelegate.swift"
-            timestampString = "468672245.374059"
+            filePath = "MemeMeV2.0/DataCollectionViewController.swift"
+            timestampString = "469279650.939613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "MemeAppDelegate"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMeV2_0.MemeAppDelegate.memes.getter : Swift.Array&lt;MemeMeV2_0.MemeModel&gt;"
-                  moduleName = "MemeMeV2.0"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/XavierJorda/Documents/swift_course/project2.1/MemeMeV2.0/MemeMeV2.0/MemeAppDelegate.swift"
-                  timestampString = "468672846.806858"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMeV2_0.MemeAppDelegate.memes.setter : Swift.Array&lt;MemeMeV2_0.MemeModel&gt;"
-                  moduleName = "MemeMeV2.0"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/XavierJorda/Documents/swift_course/project2.1/MemeMeV2.0/MemeMeV2.0/MemeAppDelegate.swift"
-                  timestampString = "468672846.807164"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMeV2_0.MemeAppDelegate.memes.materializeForSet : Swift.Array&lt;MemeMeV2_0.MemeModel&gt;"
-                  moduleName = "MemeMeV2.0"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/XavierJorda/Documents/swift_course/project2.1/MemeMeV2.0/MemeMeV2.0/MemeAppDelegate.swift"
-                  timestampString = "468672846.807422"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemeMeV2.0/DataTabViewController.swift"
-            timestampString = "468672425.856903"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "DataTabViewController"
-            landmarkType = "3">
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

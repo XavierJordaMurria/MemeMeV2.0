@@ -30,6 +30,8 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
     var movedKeyBoardUp: Bool       = false
     var hideStatusBar: Bool         = false
     
+    var comingFromDataView:(Bool, Int) = (loadMeme:false, memeIndex2Load: -1)
+    
     enum PreviousVC: Int
     {
         case Unknown = -1
@@ -47,7 +49,7 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName : -8.0
     ]
-
+    
     // MARK: -
     override func viewDidLoad()
     {
@@ -55,17 +57,35 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
         // Do any additional setup after loading the view, typically from a nib.
         print("ViewController viewDidLoad")
         
-        setTextViewProperties(topTextView, textInit: "TOP TEXT")
-        setTextViewProperties(bottomTextView, textInit: "BOTTOM TEXT BOTTOM TEXT BOTTOM TEXT BOTTOM TEXT BOTTOM TEXT")
+        if(comingFromDataView.0 == true && comingFromDataView.1 > -1)
+        {
+            //enable save button when coming from the tabl or coll view
+            shareButton.enabled = true
+            
+            let recMemeMe = (UIApplication.sharedApplication().delegate as! MemeAppDelegate).memes[comingFromDataView.1]
+            
+            setTextViewProperties(topTextView, textInit: recMemeMe.topText)
+            setTextViewProperties(bottomTextView, textInit: recMemeMe.bottomText)
+            imagePickerView.image = recMemeMe.image
+            topTextFirstFocus = true
+            bottomTextFirstFocus = true
+            
+            comingFromDataView.0 = false
+        }
+        else
+        {
+            setTextViewProperties(topTextView, textInit: "TOP TEXT")
+            setTextViewProperties(bottomTextView, textInit: "BOTTOM TEXT BOTTOM TEXT BOTTOM TEXT BOTTOM TEXT BOTTOM TEXT")
+
+            //disable save button till the user has pick up a photo
+            shareButton.enabled = false
+        }
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        //disable save button till the user has pick up a photo
-        shareButton.enabled = false
     }
     
     override func viewWillAppear(animated: Bool)
@@ -94,6 +114,19 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
     override func prefersStatusBarHidden() -> Bool
     {
         return hideStatusBar
+    }
+    
+    // MARK: - IBAction
+    @IBAction func unWindMain(unwindSegue: UIStoryboardSegue)
+    {
+        if let tabViewController = unwindSegue.sourceViewController as? DataTabViewController
+        {
+            print("Coming from BLUE")
+        }
+        else if let collViewController = unwindSegue.sourceViewController as? DataCollectionViewController
+        {
+            print("Coming from RED")
+        }
     }
     
     @IBAction func pickerButton(sender: AnyObject)
@@ -137,13 +170,17 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
             if(success)
             {
                 self.save()
-                self.performSegueWithIdentifier("main2TabSegue", sender: self)
-                
+//                self.performSegueWithIdentifier("unWindSegue", sender: self)
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    
+                })
             }
             
             self.hideShowNavStatusBar(false)
         }
     }
+    
+    // MARK: -
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard()
@@ -213,8 +250,6 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
     {
         //Create the meme
         let meme = MemeModel.init(topText: topTextView.text!, bottomText: bottomTextView.text!, image: imagePickerView.image!, memeImage: generateMemedImage())
-        
-//        UIImageWriteToSavedPhotosAlbum(meme.memeImage!, nil, nil, nil);
         
         // Add it to the memes array in the Application Delegate
         let appDelegate =  UIApplication.sharedApplication().delegate as! MemeAppDelegate

@@ -14,13 +14,14 @@ class DataTabViewController: UITableViewController
     {
         return (UIApplication.sharedApplication().delegate as! MemeAppDelegate).memes
     }
+
+    var currentIntdex: Int? = nil
     
     // MARK: -
-    override func viewDidLoad()
+    override func viewWillAppear(animated: Bool)
     {
         tableView.reloadData()
     }
-
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -38,6 +39,26 @@ class DataTabViewController: UITableViewController
         cell!.memeTitle.text = meme.topText
         
         return cell!
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        currentIntdex = indexPath.row
+        self.performSegueWithIdentifier("tabVC2MainVC", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
+        if segue.identifier == "tabVC2MainVC"
+        {
+            // Create a new variable to store the instance of PlayerTableViewController
+            let destinationVC = segue.destinationViewController as! MainMemeViewController
+            
+            if let index = currentIntdex?.bigEndian
+            {
+                destinationVC.comingFromDataView = (true,index)
+            }
+        }
     }
 
 }
