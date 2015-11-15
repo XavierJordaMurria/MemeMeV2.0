@@ -251,7 +251,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="qNC-78-yEi">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Zbs-qZ-rVA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zbs-qZ-rVA">
                             <connections>
                                 <segue destination="B4P-kk-bFe" kind="showDetail" identifier="collSegue2MainVC" id="ULS-M8-ZRr"/>
                             </connections>
@@ -342,7 +342,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5dW-5G-0xJ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="NAe-fh-nSB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NAe-fh-nSB">
                             <connections>
                                 <segue destination="B4P-kk-bFe" kind="show" identifier="tabSegue2MainVC" id="1F2-nI-wNr"/>
                             </connections>
