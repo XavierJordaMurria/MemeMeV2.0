@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataTabViewController: UITableViewController
+class DataTabViewController: UITableViewController, UINavigationControllerDelegate
 {
     var memes: [MemeModel]
     {
@@ -35,7 +35,7 @@ class DataTabViewController: UITableViewController
         let meme = self.memes[indexPath.row]
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as? TableCells!
-        cell!.memeImage.image = meme.image
+        cell!.memeImage.image = meme.memeImage
         cell!.memeTitle.text = meme.topText
         
         return cell!
@@ -44,22 +44,21 @@ class DataTabViewController: UITableViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         currentIntdex = indexPath.row
-        self.performSegueWithIdentifier("tabVC2MainVC", sender: self)
+        self.performSegueWithIdentifier("tab2DetailsView", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        if segue.identifier == "tabVC2MainVC"
+        if segue.identifier == "tab2DetailsView"
         {
             // Create a new variable to store the instance of PlayerTableViewController
-            let destinationVC = segue.destinationViewController as! MainMemeViewController
+            let destinationVC = segue.destinationViewController as! DetailViewController
             
             if let index = currentIntdex?.bigEndian
             {
-                destinationVC.comingFromDataView = (true,index)
+                destinationVC.currentIndex = index
             }
         }
     }
-
 }
 

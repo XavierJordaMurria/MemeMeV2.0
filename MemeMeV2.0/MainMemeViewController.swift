@@ -119,11 +119,11 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
     // MARK: - IBAction
     @IBAction func unWindMain(unwindSegue: UIStoryboardSegue)
     {
-        if let tabViewController = unwindSegue.sourceViewController as? DataTabViewController
+        if let _ = unwindSegue.sourceViewController as? DataTabViewController
         {
             print("Coming from BLUE")
         }
-        else if let collViewController = unwindSegue.sourceViewController as? DataCollectionViewController
+        else if let _ = unwindSegue.sourceViewController as? DataCollectionViewController
         {
             print("Coming from RED")
         }
@@ -167,19 +167,22 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
             (activity, success, items, error) in
             print("Activity: \(activity) Success: \(success) Items: \(items) Error: \(error)")
             
+            self.hideShowNavStatusBar(false)
+            
             if(success)
             {
                 self.save()
-//                self.performSegueWithIdentifier("unWindSegue", sender: self)
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                    
                 })
             }
-            
-            self.hideShowNavStatusBar(false)
         }
     }
     
+    @IBAction func cancelButton(sender: AnyObject)
+    {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+        })
+    }
     // MARK: -
     
     //Calls this function when the tap is recognized.
@@ -341,11 +344,13 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
         {
             hideStatusBar = true
             navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == true, animated: true)
+            pickerBar.hidden = true
         }
         else
         {
             hideStatusBar = false
             navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true)
+            pickerBar.hidden = false
         }
     }
     

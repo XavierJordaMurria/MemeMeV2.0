@@ -6,6 +6,45 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="aWf-0q-SgI">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FMB-UW-1d3" customClass="DetailViewController" customModule="MemeMeV2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fwm-L4-G1m"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mbe-sb-iHK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vpN-VM-OrW">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hqX-jJ-63S">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="64" width="360" height="427"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hqX-jJ-63S"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hqX-jJ-63S"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="l7e-Ld-Fjq"/>
+                    <connections>
+                        <outlet property="memeImage" destination="hqX-jJ-63S" id="2Qu-Z0-GLe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7W-90-RJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2287.5" y="-788"/>
+        </scene>
         <!--Bar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -167,6 +206,7 @@
                                 <action selector="shareButton:" destination="BYZ-38-t0r" id="fSh-NQ-9ua"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="vHA-Ft-8qT" userLabel="Cancel"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -183,7 +223,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="L2f-Uh-SSd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2089.5" y="-347"/>
+            <point key="canvasLocation" x="2287.5" y="41"/>
         </scene>
         <!--Data Collection View Controller-->
         <scene sceneID="m15-TF-rEm">
@@ -253,13 +293,13 @@
                     <navigationItem key="navigationItem" id="qNC-78-yEi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zbs-qZ-rVA">
                             <connections>
-                                <segue destination="B4P-kk-bFe" kind="showDetail" identifier="collSegue2MainVC" id="ULS-M8-ZRr"/>
+                                <segue destination="B4P-kk-bFe" kind="custom" identifier="collSegue2MainVC" customClass="Bottom2TopCustomSegue" customModule="MemeMeV2_0" customModuleProvider="target" id="ULS-M8-ZRr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="6nK-cH-rlb" id="JeS-S7-ZfM"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="collVC2MainVC" id="Cag-aP-Cvo"/>
+                        <segue destination="FMB-UW-1d3" kind="show" identifier="collVC2MainVC" id="Dps-Gf-78S"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYG-Wj-2i2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,13 +384,13 @@
                     <navigationItem key="navigationItem" id="5dW-5G-0xJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NAe-fh-nSB">
                             <connections>
-                                <segue destination="B4P-kk-bFe" kind="show" identifier="tabSegue2MainVC" id="1F2-nI-wNr"/>
+                                <segue destination="B4P-kk-bFe" kind="custom" identifier="tabSegue2MainVC" customClass="Bottom2TopCustomSegue" customModule="MemeMeV2_0" customModuleProvider="target" id="1F2-nI-wNr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="gAh-oG-MJK" id="BhS-z8-zwx"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="tabVC2MainVC" id="wnC-XS-QOM"/>
+                        <segue destination="FMB-UW-1d3" kind="show" identifier="tab2DetailsView" id="iiO-1X-d7z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ke-2x-WJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,7 +413,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFr-FD-qsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234.5" y="-326"/>
+            <point key="canvasLocation" x="1432.5" y="62"/>
         </scene>
         <!--NCCollectionData-->
         <scene sceneID="qGH-Xt-hK5">
@@ -413,6 +453,24 @@
             </objects>
             <point key="canvasLocation" x="-751.5" y="-692"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g8K-18-k65">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7EQ-iX-aNK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SoX-x8-9yg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FMB-UW-1d3" kind="relationship" relationship="rootViewController" id="K3c-ZU-0Pb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdX-AW-Z16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432.5" y="-780"/>
+        </scene>
     </scenes>
     <resources>
         <image name="collection_30x30" width="30" height="30"/>
@@ -420,7 +478,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cag-aP-Cvo"/>
         <segue reference="ULS-M8-ZRr"/>
+        <segue reference="Dps-Gf-78S"/>
     </inferredMetricsTieBreakers>
 </document>

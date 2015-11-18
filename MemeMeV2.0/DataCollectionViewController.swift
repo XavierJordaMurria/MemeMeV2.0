@@ -47,7 +47,7 @@ class DataCollectionViewController: UICollectionViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? CustomCollectionCell
 
         // Configure the cell
-        cell?.memeColl.image = meme.image
+        cell?.memeColl.image = meme.memeImage
         
         return cell!
     }
