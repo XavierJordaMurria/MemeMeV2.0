@@ -17,7 +17,7 @@ class DataCollectionViewController: UICollectionViewController
     private let reuseIdentifier = "cell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
-//    [self.myCollectionViewFlowLayout setItemSize:CGSizeMake(320, 548)];
+//    [myCollectionViewFlowLayout setItemSize:CGSizeMake(320, 548)];
     
     var currentIntdex: Int? = nil
     
@@ -42,7 +42,7 @@ class DataCollectionViewController: UICollectionViewController
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         print("cellForItemAtIndexPath index => \(indexPath.row)")
-        let meme = self.collMemes[indexPath.row]
+        let meme = collMemes[indexPath.row]
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? CustomCollectionCell
 
@@ -59,7 +59,7 @@ class DataCollectionViewController: UICollectionViewController
         cell!.layer.borderColor = UIColor.grayColor().CGColor
         
         currentIntdex = indexPath.row
-        self.performSegueWithIdentifier("collVC2MainVC", sender: self)
+        performSegueWithIdentifier("collVC2MainVC", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
@@ -67,11 +67,12 @@ class DataCollectionViewController: UICollectionViewController
         if segue.identifier == "collVC2MainVC"
         {
             // Create a new variable to store the instance of PlayerTableViewController
-            let destinationVC = segue.destinationViewController as! MainMemeViewController
+            let destinationVC = segue.destinationViewController as! DetailViewController
             
-            if let index = currentIntdex?.bigEndian
+            if let index = currentIntdex
             {
-                destinationVC.comingFromDataView = (true,index)
+                print("About to segue to DetailsView with index => \(index)")
+                destinationVC.currentIndex = index
             }
         }
     }

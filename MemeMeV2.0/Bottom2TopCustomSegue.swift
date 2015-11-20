@@ -13,8 +13,8 @@ class Bottom2TopCustomSegue: UIStoryboardSegue
     override func perform()
     {
         // Assign the source and destination views to local variables.
-        let firstVCView = self.sourceViewController.view as UIView!
-        let secondVCView = self.destinationViewController.view as UIView!
+        let firstVCView = sourceViewController.view as UIView!
+        let secondVCView = destinationViewController.view as UIView!
         
         // Get the screen width and height.
         let screenWidth = UIScreen.mainScreen().bounds.size.width

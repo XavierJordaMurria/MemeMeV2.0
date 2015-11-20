@@ -15,24 +15,40 @@
                         <viewControllerLayoutGuide type="bottom" id="Mbe-sb-iHK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vpN-VM-OrW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hqX-jJ-63S">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="64" width="360" height="427"/>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mbe-sb-iHK" firstAttribute="top" secondItem="hqX-jJ-63S" secondAttribute="bottom" constant="38" id="1Zd-1B-eII"/>
+                            <constraint firstItem="hqX-jJ-63S" firstAttribute="leading" secondItem="vpN-VM-OrW" secondAttribute="leadingMargin" constant="-20" id="BL2-jK-Qtx"/>
+                            <constraint firstItem="hqX-jJ-63S" firstAttribute="top" secondItem="Fwm-L4-G1m" secondAttribute="bottom" id="BdM-CV-NNo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hqX-jJ-63S" secondAttribute="trailing" constant="-20" id="jrS-zt-U2Q"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hqX-jJ-63S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BL2-jK-Qtx"/>
+                                <exclude reference="BdM-CV-NNo"/>
+                                <exclude reference="jrS-zt-U2Q"/>
+                                <exclude reference="1Zd-1B-eII"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="hqX-jJ-63S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BL2-jK-Qtx"/>
+                                <include reference="BdM-CV-NNo"/>
+                                <include reference="jrS-zt-U2Q"/>
+                                <include reference="1Zd-1B-eII"/>
                             </mask>
                         </variation>
                     </view>
@@ -206,7 +222,11 @@
                                 <action selector="shareButton:" destination="BYZ-38-t0r" id="fSh-NQ-9ua"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="vHA-Ft-8qT" userLabel="Cancel"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="vHA-Ft-8qT" userLabel="Cancel">
+                            <connections>
+                                <action selector="cancelButton:" destination="BYZ-38-t0r" id="Wjx-NU-Cdt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

@@ -180,7 +180,7 @@ class MainMemeViewController: UIViewController,UIImagePickerControllerDelegate, 
     
     @IBAction func cancelButton(sender: AnyObject)
     {
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+        dismissViewControllerAnimated(true, completion: { () -> Void in
         })
     }
     // MARK: -
