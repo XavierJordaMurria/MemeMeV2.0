@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wgf-z0-SRw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wgf-z0-SRw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -34,10 +34,10 @@
                                 <exclude reference="hqX-jJ-63S"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1Zd-1B-eII"/>
                                 <exclude reference="BL2-jK-Qtx"/>
                                 <exclude reference="BdM-CV-NNo"/>
                                 <exclude reference="jrS-zt-U2Q"/>
-                                <exclude reference="1Zd-1B-eII"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -45,10 +45,10 @@
                                 <include reference="hqX-jJ-63S"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1Zd-1B-eII"/>
                                 <include reference="BL2-jK-Qtx"/>
                                 <include reference="BdM-CV-NNo"/>
                                 <include reference="jrS-zt-U2Q"/>
-                                <include reference="1Zd-1B-eII"/>
                             </mask>
                         </variation>
                     </view>
@@ -498,7 +498,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ULS-M8-ZRr"/>
-        <segue reference="Dps-Gf-78S"/>
+        <segue reference="iiO-1X-d7z"/>
+        <segue reference="1F2-nI-wNr"/>
     </inferredMetricsTieBreakers>
 </document>
